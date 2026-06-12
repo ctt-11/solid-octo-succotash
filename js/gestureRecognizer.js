@@ -167,3 +167,5 @@ class GestureRecognizer {
     }
 }
 
+export { GestureRecognizer };
+

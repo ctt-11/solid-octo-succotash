@@ -133,3 +133,5 @@ class HandTracker {
     }
 }
 
+export { HandTracker };
+

@@ -1,3 +1,7 @@
+import { ParticleSystem } from './particleSystem.js';
+import { HandTracker } from './handTracker.js';
+import { GestureRecognizer } from './gestureRecognizer.js';
+
 class Game {
     constructor() {
         this.canvas = document.getElementById('canvas');
