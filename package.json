@@ -1,0 +1,13 @@
+{
+  "name": "hand-skeleton-particle-game",
+  "version": "1.0.0",
+  "description": "一个识别手骨骼动作变幻形态的粒子游戏",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": ["hand-tracking", "particles", "game", "mediapipe"],
+  "author": "",
+  "license": "MIT"
+}
