@@ -187,4 +187,3 @@ class ParticleSystem {
     }
 }
 
-export { ParticleSystem };

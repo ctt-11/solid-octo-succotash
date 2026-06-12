@@ -133,4 +133,3 @@ class HandTracker {
     }
 }
 
-export { HandTracker };

@@ -167,4 +167,3 @@ class GestureRecognizer {
     }
 }
 
-export { GestureRecognizer };
