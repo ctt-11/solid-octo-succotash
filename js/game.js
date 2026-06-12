@@ -94,10 +94,25 @@ class Game {
             await this.handTracker.initialize();
         } catch (error) {
             console.error('初始化失败:', error);
-            this.gestureDisplay.textContent = '无法访问摄像头';
+            this.gestureDisplay.textContent = '未检测到摄像头，使用鼠标控制';
+            this.setupMouseControl();
         }
         
         this.gameLoop();
+    }
+    
+    setupMouseControl() {
+        this.mousePosition = null;
+        this.canvas.addEventListener('mousemove', (e) => {
+            this.mousePosition = {
+                x: e.clientX,
+                y: e.clientY
+            };
+        });
+        
+        this.canvas.addEventListener('mouseleave', () => {
+            this.mousePosition = null;
+        });
     }
 
     handleHandDetected(data) {
@@ -114,6 +129,9 @@ class Game {
 
     gameLoop() {
         if (this.particleSystem) {
+            if (this.mousePosition) {
+                this.particleSystem.setHandPosition(this.mousePosition, 1);
+            }
             this.particleSystem.update();
             this.particleSystem.draw();
             this.particleCountDisplay.textContent = `粒子数: ${this.particleSystem.getParticleCount()}`;
